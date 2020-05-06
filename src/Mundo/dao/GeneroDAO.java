@@ -61,37 +61,37 @@ public class GeneroDAO implements IDAO {
 
 	@Override
 	public GeneroIDTO consult(Conexion con, Mensaje message) {
-		GeneroIDTO song = new GeneroIDTO();
-		song.setId(message.getIdGenero());
+		GeneroIDTO anime = new GeneroIDTO();
+		anime.setId(message.getIdGenero());
 		
-		ResultSet rs = con.ejecutaConsulta(song.consult());
+		ResultSet rs = con.ejecutaConsulta(anime.consult());
 		try {
 			if(rs.next()) {
-			song.setNombreGenero(rs.getString("nombre"));
+			anime.setNombreGenero(rs.getString("nombre"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return song;
+		return anime;
 	}
 
 	public GeneroIDTO consultID(Conexion con, Mensaje msj) {
-		GeneroIDTO song = new GeneroIDTO();
-		song.setNombreGenero(msj.getGenero());
-		GeneroIDTO song2 = new GeneroIDTO();
-		ResultSet rs = con.ejecutaConsulta(song.consultid());
+		GeneroIDTO anime = new GeneroIDTO();
+		anime.setNombreGenero(msj.getGenero());
+		GeneroIDTO anime2 = new GeneroIDTO();
+		ResultSet rs = con.ejecutaConsulta(anime.consultid());
 		try {
 			if(rs.next()) {
-				song2.setId(rs.getInt(1));
-				song2.setNombreGenero(rs.getString(2));
+				anime2.setId(rs.getInt(1));
+				anime2.setNombreGenero(rs.getString(2));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return song2;
+		return anime2;
 	}
 
 	public ArrayList<Integer> consultPivot(Conexion con, int idAnime) throws SQLException {

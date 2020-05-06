@@ -12,7 +12,7 @@ import Mundo.Contenedora.Nodo;
 public class User {
 public final static int PUERTO = 1425;
 	
-	private String host = "localhost";
+	private String host = "192.168.1.83";
 	
 	private Socket cliente;
 	

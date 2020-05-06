@@ -61,39 +61,39 @@ public class EstudioDAO implements IDAO {
 
 	@Override
 	public EstudioIDTO consult(Conexion con, Mensaje message) {
-		EstudioIDTO song = new EstudioIDTO();
-		song.setId(message.getIdEstudio());
+		EstudioIDTO anime = new EstudioIDTO();
+		anime.setId(message.getIdEstudio());
 		
-		ResultSet rs = con.ejecutaConsulta(song.consult());
+		ResultSet rs = con.ejecutaConsulta(anime.consult());
 		try {
 			if(rs.next()) {
-			song.setNombreEstudio(rs.getString(2));
-			System.out.println(song.getNombreEstudio());
+			anime.setNombreEstudio(rs.getString(2));
+			System.out.println(anime.getNombreEstudio());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return song;
+		return anime;
 	}
 	
 	public EstudioIDTO consultID(Conexion con, Mensaje message) {
-		EstudioIDTO song = new EstudioIDTO();
-		song.setNombreEstudio(message.getEstudio());
-		EstudioIDTO song2 = new EstudioIDTO();
-		ResultSet rs = con.ejecutaConsulta(song.consultid());
+		EstudioIDTO anime = new EstudioIDTO();
+		anime.setNombreEstudio(message.getEstudio());
+		EstudioIDTO anime2 = new EstudioIDTO();
+		ResultSet rs = con.ejecutaConsulta(anime.consultid());
 		try {
 			if(rs.next()) {
-				song2.setId(rs.getInt(1));
-				song2.setNombreEstudio(rs.getString(2));
+				anime2.setId(rs.getInt(1));
+				anime2.setNombreEstudio(rs.getString(2));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return song2;
+		return anime2;
 	}
 
 }

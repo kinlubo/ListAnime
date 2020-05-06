@@ -265,7 +265,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {                                         
         // crear genero
-    	String nombre  = JOptionPane.showInputDialog(null, "nombre del genero a Crear");
+    	String nombre  = JOptionPane.showInputDialog(null, "nobre del genero a Crear");
     	GeneroDAO dao = new GeneroDAO();
     	Mensaje message = new Mensaje();
     	message.setGenero(nombre);
@@ -275,7 +275,7 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         //crear estudio
-    	String nombre  = JOptionPane.showInputDialog(null, "nombre del estudio a Crear");
+    	String nombre  = JOptionPane.showInputDialog(null, "nobre del estudio a Crear");
     	EstudioDAO dao = new EstudioDAO();
     	Mensaje message = new Mensaje();
     	message.setEstudio(nombre);

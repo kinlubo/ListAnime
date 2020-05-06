@@ -73,10 +73,10 @@ public class AnimeDAO implements IDAO {
 
 	public AnimeIDTO consult(Conexion con, Mensaje message) throws SQLException 
 	{
-		AnimeIDTO song = new AnimeIDTO();
-		song.setIdAnime(message.getIdAnime());
+		AnimeIDTO anime = new AnimeIDTO();
+		anime.setIdAnime(message.getIdAnime());
 		
-		ResultSet rs = con.ejecutaConsulta(song.consult());
+		ResultSet rs = con.ejecutaConsulta(anime.consult());
 		AnimeIDTO an2 = new AnimeIDTO();
 		if(rs.next()) {
 			an2.setNombreAnime(rs.getString(2));
